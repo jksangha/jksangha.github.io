@@ -103,14 +103,14 @@ const Index = () => {
       <div className="container max-w-4xl mx-auto space-y-6">
         <ProfileHeader
           avatar={avatarImg}
-          name="Alex Rodriguez"
-          username="alexcodes"
-          bio="Passionate frontend engineer crafting delightful user experiences. I love turning complex problems into elegant solutions. Building the future of web, one component at a time. ✨"
-          location="San Francisco, CA"
-          website="alexrodriguez.dev"
-          joinDate="March 2018"
+          name="Jassi Sangha"
+          username="jksangha"
+          bio="👋 Hi, I'm Jassi! I'm an energetic product leader, with over a decade of experience building robust products and services in a number of industries."
+          location="London, United Kingdom"
+          website="github.com/jksangha"
+          joinDate="2024"
           projectCount={projects.length}
-          connections={1247}
+          connections={500}
           activeTab={activeTab}
           onTabChange={setActiveTab}
         />
