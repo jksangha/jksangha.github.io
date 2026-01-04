@@ -1,11 +1,192 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import ProfileHeader from "@/components/ProfileHeader";
+import ProjectCard from "@/components/ProjectCard";
+import TimelineItem from "@/components/TimelineItem";
+import { Code, Palette, Zap, Coffee, Award, BookOpen } from "lucide-react";
+
+import avatarImg from "@/assets/avatar.jpg";
+import project1Img from "@/assets/project-1.jpg";
+import project2Img from "@/assets/project-2.jpg";
+import project3Img from "@/assets/project-3.jpg";
+import project4Img from "@/assets/project-4.jpg";
+import company1Img from "@/assets/company-1.jpg";
+import company2Img from "@/assets/company-2.jpg";
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState<"projects" | "timeline" | "about">("projects");
+
+  const projects = [
+    {
+      image: project1Img,
+      title: "Analytics Dashboard",
+      description: "A comprehensive analytics platform with real-time data visualization and insights for business metrics.",
+      tags: ["React", "TypeScript", "D3.js"],
+      likes: 248,
+      comments: 32,
+      link: "#",
+    },
+    {
+      image: project2Img,
+      title: "ShopFlow Mobile",
+      description: "Modern e-commerce mobile app with seamless checkout experience and personalized recommendations.",
+      tags: ["React Native", "Node.js"],
+      likes: 186,
+      comments: 24,
+      link: "#",
+    },
+    {
+      image: project3Img,
+      title: "Portfolio Studio",
+      description: "Creative portfolio builder with drag-and-drop interface and stunning template designs.",
+      tags: ["Next.js", "Tailwind"],
+      likes: 312,
+      comments: 45,
+      link: "#",
+    },
+    {
+      image: project4Img,
+      title: "AI Assistant Hub",
+      description: "Intelligent chatbot platform with natural language processing and multi-channel integration.",
+      tags: ["Python", "OpenAI", "React"],
+      likes: 421,
+      comments: 67,
+      link: "#",
+    },
+  ];
+
+  const timeline = [
+    {
+      role: "Senior Frontend Engineer",
+      company: "TechForward Inc.",
+      location: "San Francisco, CA",
+      startDate: "Jan 2023",
+      endDate: "Present",
+      description: "Leading the frontend architecture for our flagship product. Building scalable design systems and mentoring junior developers on best practices.",
+      image: company1Img,
+      isCurrent: true,
+    },
+    {
+      role: "Full Stack Developer",
+      company: "Creative Labs",
+      location: "Austin, TX",
+      startDate: "Mar 2020",
+      endDate: "Dec 2022",
+      description: "Developed and maintained multiple client projects using React, Node.js, and PostgreSQL. Improved team velocity by 40% through better tooling.",
+      image: company2Img,
+      isCurrent: false,
+    },
+    {
+      role: "Junior Developer",
+      company: "StartupXYZ",
+      location: "Remote",
+      startDate: "Jun 2018",
+      endDate: "Feb 2020",
+      description: "Started my career building web applications and learning the fundamentals of software development in a fast-paced startup environment.",
+      isCurrent: false,
+    },
+  ];
+
+  const skills = [
+    { icon: Code, label: "Frontend Development", description: "React, Vue, TypeScript, Next.js" },
+    { icon: Palette, label: "UI/UX Design", description: "Figma, Design Systems, Prototyping" },
+    { icon: Zap, label: "Performance", description: "Optimization, Lighthouse, Core Web Vitals" },
+    { icon: Coffee, label: "Backend", description: "Node.js, Python, PostgreSQL, MongoDB" },
+  ];
+
+  const achievements = [
+    { icon: Award, title: "Top Contributor 2024", org: "Open Source Community" },
+    { icon: BookOpen, title: "Published Author", org: "Frontend Weekly" },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen py-6 px-4">
+      <div className="container max-w-4xl mx-auto space-y-6">
+        <ProfileHeader
+          avatar={avatarImg}
+          name="Alex Rodriguez"
+          username="alexcodes"
+          bio="Passionate frontend engineer crafting delightful user experiences. I love turning complex problems into elegant solutions. Building the future of web, one component at a time. ✨"
+          location="San Francisco, CA"
+          website="alexrodriguez.dev"
+          joinDate="March 2018"
+          projectCount={projects.length}
+          connections={1247}
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+        />
+
+        {activeTab === "projects" && (
+          <section aria-label="Projects">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {projects.map((project, index) => (
+                <ProjectCard key={project.title} {...project} index={index} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {activeTab === "timeline" && (
+          <section aria-label="Career Journey" className="bg-card rounded-2xl shadow-card p-6">
+            <h2 className="font-display text-xl font-semibold text-foreground mb-6">
+              Career Journey
+            </h2>
+            <div className="space-y-0">
+              {timeline.map((item, index) => (
+                <TimelineItem key={item.company} {...item} index={index} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {activeTab === "about" && (
+          <section aria-label="About" className="space-y-6">
+            <div className="bg-card rounded-2xl shadow-card p-6 animate-fade-up">
+              <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                Skills & Expertise
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {skills.map((skill, index) => (
+                  <div
+                    key={skill.label}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors duration-200 animate-scale-in"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div className="p-2.5 rounded-lg bg-primary/10">
+                      <skill.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">{skill.label}</h3>
+                      <p className="text-sm text-muted-foreground">{skill.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-card rounded-2xl shadow-card p-6 animate-fade-up" style={{ animationDelay: "200ms" }}>
+              <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                Achievements
+              </h2>
+              <div className="space-y-3">
+                {achievements.map((achievement, index) => (
+                  <div
+                    key={achievement.title}
+                    className="flex items-center gap-3 p-4 rounded-xl border border-border hover:border-primary/30 transition-colors duration-200 animate-slide-in"
+                    style={{ animationDelay: `${(index + 4) * 100}ms` }}
+                  >
+                    <div className="p-2.5 rounded-lg bg-accent/10">
+                      <achievement.icon className="w-5 h-5 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">{achievement.title}</h3>
+                      <p className="text-sm text-muted-foreground">{achievement.org}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );
