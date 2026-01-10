@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local clone of GitHub Pages repo
+jksangha.github.io/
