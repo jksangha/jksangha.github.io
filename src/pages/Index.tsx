@@ -9,8 +9,6 @@ import project1Img from "@/assets/project-1.jpg";
 import project2Img from "@/assets/project-2.jpg";
 import project3Img from "@/assets/project-3.jpg";
 import project4Img from "@/assets/project-4.jpg";
-import company1Img from "@/assets/company-1.jpg";
-import company2Img from "@/assets/company-2.jpg";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState<"projects" | "timeline" | "about">("projects");
@@ -56,32 +54,39 @@ const Index = () => {
 
   const timeline = [
     {
-      role: "Senior Frontend Engineer",
-      company: "TechForward Inc.",
-      location: "San Francisco, CA",
-      startDate: "Jan 2023",
+      role: "Sabbatical",
+      company: "Exploring, learning and building",
+      location: "London, UK",
+      startDate: "Sep 2025",
       endDate: "Present",
-      description: "Leading the frontend architecture for our flagship product. Building scalable design systems and mentoring junior developers on best practices.",
-      image: company1Img,
+      description: "Taking a sabbatical to explore, learn, and build across product, engineering, and emerging tech.",
       isCurrent: true,
     },
     {
-      role: "Full Stack Developer",
-      company: "Creative Labs",
-      location: "Austin, TX",
-      startDate: "Mar 2020",
-      endDate: "Dec 2022",
-      description: "Developed and maintained multiple client projects using React, Node.js, and PostgreSQL. Improved team velocity by 40% through better tooling.",
-      image: company2Img,
+      role: "Product Manager",
+      company: "Kobalt Music",
+      location: "London, UK",
+      startDate: "May 2024",
+      endDate: "Aug 2025",
+      description: "Led product initiatives for music services, collaborating across engineering, design, and artists to ship data-driven improvements.",
       isCurrent: false,
     },
     {
-      role: "Junior Developer",
-      company: "StartupXYZ",
-      location: "Remote",
-      startDate: "Jun 2018",
-      endDate: "Feb 2020",
-      description: "Started my career building web applications and learning the fundamentals of software development in a fast-paced startup environment.",
+      role: "Product Manager",
+      company: "Matchesfashion",
+      location: "London, UK",
+      startDate: "Jun 2021",
+      endDate: "Mar 2024",
+      description: "Drove e-commerce product roadmap, improving discovery, personalization, and conversion for a global luxury fashion audience.",
+      isCurrent: false,
+    },
+    {
+      role: "Technical Program Manager",
+      company: "Holland and Barrett",
+      location: "London, UK",
+      startDate: "May 2020",
+      endDate: "May 2021",
+      description: "Managed cross-functional programs to modernize digital platforms, coordinating delivery across engineering, product, and operations.",
       isCurrent: false,
     },
   ];
