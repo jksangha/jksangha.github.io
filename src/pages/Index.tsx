@@ -104,7 +104,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen py-6 px-4">
+    <div className="min-h-screen px-4 pb-6 pt-0">
       <div className="container max-w-4xl mx-auto space-y-6">
         <ProfileHeader
           avatar={avatarImg}
@@ -113,9 +113,7 @@ const Index = () => {
           bio="👋 Hi, I'm Jassi! I'm an energetic product leader, with over a decade of experience building robust products and services in a number of industries."
           location="London, United Kingdom"
           website="github.com/jksangha"
-          joinDate="2024"
           projectCount={projects.length}
-          connections={500}
           activeTab={activeTab}
           onTabChange={setActiveTab}
         />

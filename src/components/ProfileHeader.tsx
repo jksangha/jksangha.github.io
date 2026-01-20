@@ -1,4 +1,4 @@
-import { MapPin, Link as LinkIcon, Calendar, Users, Grid3X3, History, User } from "lucide-react";
+import { MapPin, Link as LinkIcon, Grid3X3, History, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -9,9 +9,7 @@ interface ProfileHeaderProps {
   bio: string;
   location: string;
   website: string;
-  joinDate: string;
   projectCount: number;
-  connections: number;
   activeTab: "projects" | "timeline" | "about";
   onTabChange: (tab: "projects" | "timeline" | "about") => void;
 }
@@ -23,9 +21,7 @@ const ProfileHeader = ({
   bio,
   location,
   website,
-  joinDate,
   projectCount,
-  connections,
   activeTab,
   onTabChange,
 }: ProfileHeaderProps) => {
@@ -67,11 +63,8 @@ const ProfileHeader = ({
                 <p className="text-muted-foreground">@{username}</p>
               </div>
               <div className="flex gap-2 sm:ml-auto">
-                <Button variant="gradient" size="sm">
-                  Connect
-                </Button>
-                <Button variant="outline" size="sm">
-                  Message
+                <Button asChild variant="gradient" size="sm">
+                  <a href="mailto:jsangha612@gmail.com">Connect</a>
                 </Button>
               </div>
             </div>
@@ -98,14 +91,6 @@ const ProfileHeader = ({
             <LinkIcon className="w-4 h-4" />
             {website}
           </a>
-          <span className="flex items-center gap-1.5">
-            <Calendar className="w-4 h-4" />
-            Joined {joinDate}
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Users className="w-4 h-4" />
-            <strong className="text-foreground">{connections}</strong> connections
-          </span>
         </div>
 
         {/* Tabs */}
