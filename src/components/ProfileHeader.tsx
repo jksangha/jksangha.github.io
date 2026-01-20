@@ -36,10 +36,12 @@ const ProfileHeader = ({
   ];
 
   return (
-    <header className="bg-card rounded-2xl shadow-card overflow-hidden animate-fade-up">
-      {/* Cover gradient */}
-      <div className="h-32 sm:h-40 bg-gradient-to-br from-primary via-primary-glow to-accent relative">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yIDItNCAyLTRzMiAyIDIgNC0yIDQtMiA0LTItMi0yLTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-50" />
+    <header className="relative bg-card rounded-2xl shadow-card animate-fade-up">
+      {/* Cover gradient full-bleed */}
+      <div className="relative h-32 sm:h-40 -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-10 xl:-mx-16 2xl:-mx-24">
+        <div className="absolute inset-0 left-1/2 w-screen -translate-x-1/2 bg-gradient-to-br from-primary via-primary-glow to-accent">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yIDItNCAyLTRzMiAyIDIgNC0yIDQtMiA0LTItMi0yLTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-50" />
+        </div>
       </div>
 
       <div className="px-4 sm:px-6 pb-4">
