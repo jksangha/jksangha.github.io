@@ -1,5 +1,5 @@
 import { Heart, Share2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
@@ -21,7 +21,26 @@ const ProjectCard = ({
   link,
   index = 0,
 }: ProjectCardProps) => {
+  const storageKey = `project-like-${title}`;
   const [likeCount, setLikeCount] = useState(likes);
+
+  useEffect(() => {
+    const storedValue = window.localStorage.getItem(storageKey);
+    if (storedValue !== null) {
+      const parsedValue = Number.parseInt(storedValue, 10);
+      if (!Number.isNaN(parsedValue)) {
+        setLikeCount(parsedValue);
+      }
+    }
+  }, [storageKey]);
+
+  const handleLike = () => {
+    setLikeCount((current) => {
+      const nextValue = current + 1;
+      window.localStorage.setItem(storageKey, String(nextValue));
+      return nextValue;
+    });
+  };
 
   return (
     <article
@@ -64,7 +83,7 @@ const ProjectCard = ({
         <div className="flex items-center gap-4 pt-2 border-t border-border">
           <button
             type="button"
-            onClick={() => setLikeCount((current) => current + 1)}
+            onClick={handleLike}
             className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors duration-200 group/btn"
             aria-label="Like project"
           >
