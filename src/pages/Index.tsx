@@ -89,6 +89,15 @@ const Index = () => {
       description: "Managed cross-functional programs to modernize digital platforms, coordinating delivery across engineering, product, and operations.",
       isCurrent: false,
     },
+    {
+      role: "EARLY CAREER - ERP, WMS & Enterprise Systems",
+      company: "Enterprise Delivery",
+      location: "New York / London, UK",
+      startDate: "",
+      endDate: "",
+      description: "Progressed from Business Analyst to Product Owner and SAP Consultant, delivering multiple ERP and WMS implementations across fashion and automotive clients. Built deep expertise in supply chain operations, data flows, and large-scale system integrations - foundations that continue to inform my product and program leadership today.",
+      isCurrent: false,
+    },
   ];
 
   const skills = [
