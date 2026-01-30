@@ -1,4 +1,4 @@
-import { Heart, MessageCircle, Share2, ExternalLink } from "lucide-react";
+import { Heart, MessageCircle, Share2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
@@ -37,16 +37,6 @@ const ProjectCard = ({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute top-3 right-3 p-2 rounded-full bg-card/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-card hover:scale-110"
-          >
-            <ExternalLink className="w-4 h-4 text-foreground" />
-          </a>
-        )}
       </div>
 
       <div className="p-4 space-y-3">
