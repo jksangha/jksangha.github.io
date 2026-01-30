@@ -92,10 +92,10 @@ const Index = () => {
   ];
 
   const skills = [
-    { icon: Code, label: "Frontend Development", description: "React, Vue, TypeScript, Next.js" },
-    { icon: Palette, label: "UI/UX Design", description: "Figma, Design Systems, Prototyping" },
-    { icon: Zap, label: "Performance", description: "Optimization, Lighthouse, Core Web Vitals" },
-    { icon: Coffee, label: "Backend", description: "Node.js, Python, PostgreSQL, MongoDB" },
+    { icon: Code, label: "Product Leadership", description: "Multiple industry exposure" },
+    { icon: Zap, label: "Data/Platform Expertise", description: "Data products, platforms, and analytics" },
+    { icon: Palette, label: "Strategy", description: "Vision, roadmaps, and alignment" },
+    { icon: Coffee, label: "Strong 0-1", description: "Ideation through launch and iteration" },
   ];
 
   const achievements = [
