@@ -20,7 +20,6 @@ const Index = () => {
       description: "A self-experimentation platform that connects wearable data with user-provided context to enhance AI insights.",
       tags: ["Wearables", "AI", "Health"],
       likes: 0,
-      comments: 0,
       link: "#",
     },
     {
@@ -29,7 +28,6 @@ const Index = () => {
       description: "A gentle digital advent calendar where recipients get one note or image per day, revealed day by day.",
       tags: ["Messaging", "Gifting", "Product"],
       likes: 0,
-      comments: 0,
       link: "#",
     },
   ];

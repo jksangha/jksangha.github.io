@@ -1,4 +1,5 @@
-import { Heart, MessageCircle, Share2 } from "lucide-react";
+import { Heart, Share2 } from "lucide-react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
@@ -7,7 +8,6 @@ interface ProjectCardProps {
   description: string;
   tags: string[];
   likes?: number;
-  comments?: number;
   link?: string;
   index?: number;
 }
@@ -18,10 +18,11 @@ const ProjectCard = ({
   description,
   tags,
   likes = 0,
-  comments = 0,
   link,
   index = 0,
 }: ProjectCardProps) => {
+  const [likeCount, setLikeCount] = useState(likes);
+
   return (
     <article
       className={cn(
@@ -61,13 +62,14 @@ const ProjectCard = ({
         </div>
 
         <div className="flex items-center gap-4 pt-2 border-t border-border">
-          <button className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors duration-200 group/btn">
+          <button
+            type="button"
+            onClick={() => setLikeCount((current) => current + 1)}
+            className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors duration-200 group/btn"
+            aria-label="Like project"
+          >
             <Heart className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
-            <span className="text-sm">{likes}</span>
-          </button>
-          <button className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors duration-200 group/btn">
-            <MessageCircle className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
-            <span className="text-sm">{comments}</span>
+            <span className="text-sm">{likeCount}</span>
           </button>
           <button className="ml-auto text-muted-foreground hover:text-primary transition-colors duration-200 group/btn">
             <Share2 className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
