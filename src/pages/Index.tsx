@@ -99,8 +99,9 @@ const Index = () => {
   ];
 
   const achievements = [
-    { icon: Award, title: "Top Contributor 2024", org: "Open Source Community" },
-    { icon: BookOpen, title: "Published Author", org: "Frontend Weekly" },
+    { icon: BookOpen, title: "Completed Harvard's CS50", org: "Introduction to Computer Science" },
+    { icon: BookOpen, title: "MSc in Supply Chain and Logistics Management" },
+    { icon: BookOpen, title: "BA (Hons) in Business Management and Information Systems" },
   ];
 
   return (
@@ -168,7 +169,7 @@ const Index = () => {
 
             <div className="bg-card rounded-2xl shadow-card p-6 animate-fade-up" style={{ animationDelay: "200ms" }}>
               <h2 className="font-display text-xl font-semibold text-foreground mb-4">
-                Achievements
+                Education
               </h2>
               <div className="space-y-3">
                 {achievements.map((achievement, index) => (
@@ -182,7 +183,9 @@ const Index = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground">{achievement.title}</h3>
-                      <p className="text-sm text-muted-foreground">{achievement.org}</p>
+                      {achievement.org && (
+                        <p className="text-sm text-muted-foreground">{achievement.org}</p>
+                      )}
                     </div>
                   </div>
                 ))}
